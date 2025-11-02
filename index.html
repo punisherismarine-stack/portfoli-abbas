@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abbas Hatim Ali - Civil Engineer | Professional Resume</title>
+    <meta name="description" content="Experienced Civil Engineer with 9+ years expertise in construction, finishing works, and quality control. Available for projects in Kuwait and internationally.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.6/dist/splitting.css">
+    <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1e3a8a',
+                        'copper': '#b45309',
+                        'warm-gray': '#6b7280',
+                        'charcoal': '#374151'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .hero-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #b45309 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px) rotateX(5deg);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .skill-bar {
+            width: 0%;
+            transition: width 2s ease-in-out;
+        }
+        
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .section-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s ease-out;
+        }
+        
+        .typing-cursor {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            background: #b45309;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px #b45309;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 1.5rem;
+            width: 2px;
+            height: calc(100% - 1rem);
+            background: linear-gradient(to bottom, #b45309, transparent);
+        }
+        
+        .timeline-item:last-child::after {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-body text-charcoal">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="font-display font-bold text-xl text-navy">Abbas Hatim Ali</div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-charcoal hover:text-navy transition-colors">Home</a>
+                    <a href="#experience" class="nav-link text-charcoal hover:text-navy transition-colors">Experience</a>
+                    <a href="#skills" class="nav-link text-charcoal hover:text-navy transition-colors">Skills</a>
+                    <a href="#education" class="nav-link text-charcoal hover:text-navy transition-colors">Education</a>
+                    <a href="portfolio.html" class="nav-link text-charcoal hover:text-navy transition-colors">Portfolio</a>
+                    <a href="contact.html" class="nav-link text-charcoal hover:text-navy transition-colors">Contact</a>
+                </div>
+                <button id="download-resume" class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-colors">
+                    Download Resume
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg min-h-screen flex items-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="max-w-7xl mx-auto px-6 py-20 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <h1 class="font-display text-5xl lg:text-7xl font-bold mb-6 leading-tight">
+                        <span class="block">ABBAS</span>
+                        <span class="block text-copper">HATIM ALI</span>
+                    </h1>
+                    <div class="text-xl lg:text-2xl mb-8 font-light">
+                        <span id="typed-summary"></span>
+                    </div>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <span class="bg-white/20 px-4 py-2 rounded-lg backdrop-blur-sm">
+                            📞 +965-9556-5754
+                        </span>
+                        <span class="bg-white/20 px-4 py-2 rounded-lg backdrop-blur-sm">
+                            📧 abbashatimalio3@gmail.com
+                        </span>
+                    </div>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="contact.html" class="bg-copper text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors font-medium">
+                            Get In Touch
+                        </a>
+                        <a href="#experience" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-navy transition-colors font-medium">
+                            View Experience
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="resources/hero-engineer.png" alt="Abbas Hatim Ali - Civil Engineer" 
+                         class="w-full max-w-md mx-auto rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-lg">
+                        <div class="text-sm text-warm-gray">Experience</div>
+                        <div class="text-2xl font-bold text-navy">9+ Years</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Summary -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="font-display text-4xl font-bold text-navy mb-6">Professional Summary</h2>
+                <div class="w-24 h-1 bg-copper mx-auto mb-8"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-2xl p-8 section-reveal">
+                    <p class="text-lg leading-relaxed text-charcoal">
+                        Experienced Civil Engineer with over <strong>9 years of expertise</strong> in construction, finishing execution, 
+                        precast production, and quality control across residential, commercial, and industrial projects. Proven ability 
+                        to plan, supervise, and deliver finishing works including masonry, tiling, painting, waterproofing, and joinery 
+                        as per drawings, BOQ, and method statements.
+                    </p>
+                    <p class="text-lg leading-relaxed text-charcoal mt-6">
+                        Strong in site coordination, inspection requests, material testing, quantity verification, and snag management. 
+                        Skilled in <strong>AutoCAD, STAAD.Pro, Revit, ETABS, and MS Office</strong>. Adept at liaising with architects, 
+                        subcontractors, and QA/QC teams to ensure timely completion and high-quality workmanship.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="font-display text-4xl font-bold text-navy mb-6">Professional Experience</h2>
+                <div class="w-24 h-1 bg-copper mx-auto mb-8"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-12">
+                    <!-- Current Position -->
+                    <div class="timeline-item section-reveal">
+                        <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-navy">Production Engineer – Finishing and Precast Works</h3>
+                                    <p class="text-lg text-copper font-medium">Real-Estate Construction & Fabrication Co. (RECAFCO)</p>
+                                </div>
+                                <div class="text-warm-gray font-mono text-sm mt-2 md:mt-0">
+                                    Oct 2023 – Present | Mina Abdullah, Kuwait
+                                </div>
+                            </div>
+                            <ul class="space-y-2 text-charcoal">
+                                <li class="flex items-start">
+                                    <span class="text-copper mr-2">•</span>
+                                    Supervise and execute finishing activities including masonry, tiling, plastering, painting, waterproofing, and joinery per approved drawings and specifications
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-copper mr-2">•</span>
+                                    Conduct daily inspections and raise Inspection Requests (IRs) as per Inspection and Test Plans (ITPs)
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-copper mr-2">•</span>
+                                    Ensure compliance with QCS, IS codes, and project QA/QC procedures
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-copper mr-2">•</span>
+                                    Coordinate with subcontractors, suppliers, and site engineers for work sequencing and material availability
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Previous Position -->
+                    <div class="timeline-item section-reveal">
+                        <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-navy">CAD Designer – Architectural & Structural Detailing</h3>
+                                    <p class="text-lg text-copper font-medium">Mohammed Taqi</p>
+                                </div>
+                                <div class="text-warm-gray font-mono text-sm mt-2 md:mt-0">
+                                    Dec 2018 – Sep 2023 | Shuwaikh, Kuwait
+                                </div>
+                            </div>
+                            <ul class="space-y-2 text-charcoal">
+                                <li class="flex items-start">
+                                    <span class="text-copper mr-2">•</span>
+                                    Prepared architectural, interior, and finishing drawings using AutoCAD and Revit for residential and commercial projects
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-copper mr-2">•</span>
+                                    Collaborated with clients and contractors to resolve interface issues in finishing and MEP coordination
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-copper mr-2">•</span>
+                                    Produced quantity take-offs and supported tender documentation for finishing scope
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Earlier Positions -->
+                    <div class="timeline-item section-reveal">
+                        <div class="bg-white rounded-xl p-8 shadow-lg card-hover">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <div>
+                                    <h3 class="text-2xl font-bold text-navy">Structural Design Engineer</h3>
+                                    <p class="text-lg text-copper font-medium">Beniwal Construction Co. Pvt. Ltd.</p>
+                                </div>
+                                <div class="text-warm-gray font-mono text-sm mt-2 md:mt-0">
+                                    Aug 2015 – Oct 2017 | Jodhpur, India
+                                </div>
+                            </div>
+                            <ul class="space-y-2 text-charcoal">
+                                <li class="flex items-start">
+                                    <span class="text-copper mr-2">•</span>
+                                    Designed structural components (columns, beams, slabs, foundations) as per IS codes and client specifications
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-copper mr-2">•</span>
+                                    Supported site execution teams by reviewing architectural and structural drawings and clarifying technical details
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Visualization -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="font-display text-4xl font-bold text-navy mb-6">Core Competencies & Skills</h2>
+                <div class="w-24 h-1 bg-copper mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Technical Skills Chart -->
+                <div class="section-reveal">
+                    <h3 class="text-2xl font-bold text-navy mb-6">Technical Proficiency</h3>
+                    <div id="skills-chart" class="h-96 bg-gray-50 rounded-xl p-4"></div>
+                </div>
+                
+                <!-- Core Competencies -->
+                <div class="section-reveal">
+                    <h3 class="text-2xl font-bold text-navy mb-6">Core Competencies</h3>
+                    <div class="space-y-4">
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-charcoal">Finishing Works Execution</span>
+                                <span class="text-copper font-mono text-sm">Expert</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-copper h-2 rounded-full" data-width="95%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-charcoal">Quality Assurance & Control</span>
+                                <span class="text-copper font-mono text-sm">Expert</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-copper h-2 rounded-full" data-width="92%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-charcoal">Project Management</span>
+                                <span class="text-copper font-mono text-sm">Advanced</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-copper h-2 rounded-full" data-width="88%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-charcoal">AutoCAD & Revit</span>
+                                <span class="text-copper font-mono text-sm">Expert</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-copper h-2 rounded-full" data-width="94%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-medium text-charcoal">STAAD.Pro & ETABS</span>
+                                <span class="text-copper font-mono text-sm">Advanced</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar bg-copper h-2 rounded-full" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Certifications -->
+    <section id="education" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="font-display text-4xl font-bold text-navy mb-6">Education & Certifications</h2>
+                <div class="w-24 h-1 bg-copper mx-auto mb-8"></div>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Education -->
+                <div class="section-reveal">
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-navy mb-6">Education</h3>
+                        <div class="space-y-6">
+                            <div class="border-l-4 border-copper pl-6">
+                                <h4 class="text-xl font-bold text-charcoal">Bachelor of Technology (B.Tech – Honours)</h4>
+                                <p class="text-copper font-medium">Civil Engineering</p>
+                                <p class="text-warm-gray">Rajasthan Technical University, Jaipur, India</p>
+                                <p class="text-sm text-warm-gray mt-1">2015 | Aggregate: 78.81%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Certifications -->
+                <div class="section-reveal">
+                    <div class="bg-white rounded-xl p-8 shadow-lg">
+                        <h3 class="text-2xl font-bold text-navy mb-6">Certifications & Achievements</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-12 h-12 bg-copper rounded-full flex items-center justify-center text-white font-bold">
+                                    G
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-charcoal">GATE Qualified</h4>
+                                    <p class="text-sm text-warm-gray">Graduate Aptitude Test in Engineering</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg">
+                                <div class="w-12 h-12 bg-copper rounded-full flex items-center justify-center text-white font-bold">
+                                    A
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-charcoal">Best Project Award</h4>
+                                    <p class="text-sm text-warm-gray">Traffic Density Management</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16 section-reveal">
+                <h2 class="font-display text-4xl font-bold text-navy mb-6">Language Proficiency</h2>
+                <div class="w-24 h-1 bg-copper mx-auto mb-8"></div>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="text-center section-reveal">
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="text-4xl mb-4">🇬🇧</div>
+                            <h3 class="text-xl font-bold text-navy mb-2">English</h3>
+                            <p class="text-copper font-medium">Professional Proficiency</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center section-reveal">
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="text-4xl mb-4">🇮🇳</div>
+                            <h3 class="text-xl font-bold text-navy mb-2">Hindi</h3>
+                            <p class="text-copper font-medium">Native Speaker</p>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center section-reveal">
+                        <div class="bg-gray-50 rounded-xl p-8">
+                            <div class="text-4xl mb-4">🇸🇦</div>
+                            <h3 class="text-xl font-bold text-navy mb-2">Arabic</h3>
+                            <p class="text-copper font-medium">Professional Proficiency</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="section-reveal">
+                <h2 class="font-display text-4xl font-bold mb-6">Ready to Discuss Your Next Project?</h2>
+                <p class="text-xl mb-8 opacity-90">Available for freelance projects and full-time opportunities in Kuwait and internationally</p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="contact.html" class="bg-copper text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors font-medium">
+                        Contact Me
+                    </a>
+                    <a href="portfolio.html" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-navy transition-colors font-medium">
+                        View Portfolio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-6">
+                <h3 class="font-display text-2xl font-bold mb-2">Abbas Hatim Ali</h3>
+                <p class="text-warm-gray">Civil Engineer - Finishing Works Specialist</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="mailto:abbashatimalio3@gmail.com" class="text-warm-gray hover:text-copper transition-colors">
+                    📧 Email
+                </a>
+                <a href="tel:+96595565754" class="text-warm-gray hover:text-copper transition-colors">
+                    📞 Kuwait
+                </a>
+                <a href="tel:+918559909290" class="text-warm-gray hover:text-copper transition-colors">
+                    📞 India
+                </a>
+            </div>
+            <div class="text-warm-gray text-sm">
+                © 2024 Abbas Hatim Ali. All rights reserved. | Location: Fahaheel, Kuwait
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

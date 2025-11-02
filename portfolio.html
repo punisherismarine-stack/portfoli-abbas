@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Abbas Hatim Ali | Civil Engineering Projects</title>
+    <meta name="description" content="Explore professional civil engineering projects by Abbas Hatim Ali. Residential, commercial, and industrial construction expertise.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#1e3a8a',
+                        'copper': '#b45309',
+                        'warm-gray': '#6b7280',
+                        'charcoal': '#374151'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .filter-btn.active {
+            background-color: #1e3a8a;
+            color: white;
+        }
+        
+        .project-card {
+            opacity: 1;
+            transform: scale(1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            pointer-events: none;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+        }
+        
+        .modal.show {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: white;
+            border-radius: 1rem;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            margin: 2rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-body text-charcoal">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="font-display font-bold text-xl text-navy">Abbas Hatim Ali</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="text-charcoal hover:text-navy transition-colors">Home</a>
+                    <a href="index.html#experience" class="text-charcoal hover:text-navy transition-colors">Experience</a>
+                    <a href="index.html#skills" class="text-charcoal hover:text-navy transition-colors">Skills</a>
+                    <a href="portfolio.html" class="text-navy font-semibold">Portfolio</a>
+                    <a href="contact.html" class="text-charcoal hover:text-navy transition-colors">Contact</a>
+                </div>
+                <button id="download-resume" class="bg-navy text-white px-6 py-2 rounded-lg hover:bg-blue-800 transition-colors">
+                    Download Resume
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-navy text-white pt-24 pb-16">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center">
+                <h1 class="font-display text-5xl font-bold mb-6">Project Portfolio</h1>
+                <p class="text-xl opacity-90 max-w-3xl mx-auto">
+                    Explore my professional civil engineering projects spanning residential, commercial, and industrial construction with expertise in finishing works and quality control.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filter Navigation -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="filter-btn active px-6 py-3 rounded-lg border-2 border-navy transition-colors" data-filter="all">
+                    All Projects
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-lg border-2 border-navy transition-colors" data-filter="residential">
+                    Residential
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-lg border-2 border-navy transition-colors" data-filter="commercial">
+                    Commercial
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-lg border-2 border-navy transition-colors" data-filter="industrial">
+                    Industrial
+                </button>
+                <button class="filter-btn px-6 py-3 rounded-lg border-2 border-navy transition-colors" data-filter="finishing">
+                    Finishing Works
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="pb-20 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div id="projects-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: Luxury Residential Complex -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="residential finishing">
+                    <div class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.dreamhomestudio.com/d5f0e4217ce36664c503978894818d2a2854fa49.jpeg" 
+                             alt="Luxury Residential Complex" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-copper text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Residential
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-navy mb-2">Luxury Residential Complex</h3>
+                        <p class="text-warm-gray mb-4">High-end residential finishing works including premium tiling, painting, and joinery for 50+ units in Kuwait.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Finishing Works</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Quality Control</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Project Management</span>
+                        </div>
+                        <button class="view-project-btn w-full bg-navy text-white py-2 rounded-lg hover:bg-blue-800 transition-colors" 
+                                data-project="project1">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2: Commercial Office Building -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="commercial finishing">
+                    <div class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.builderspace.com/8b70342ef67ab67bbd5c8502466648bda0664328.jpg" 
+                             alt="Commercial Office Building" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-copper text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Commercial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-navy mb-2">Commercial Office Building</h3>
+                        <p class="text-warm-gray mb-4">Complete finishing works for a 15-story commercial building including facade work and interior fit-outs.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Facade Work</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Interior Design</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">MEP Coordination</span>
+                        </div>
+                        <button class="view-project-btn w-full bg-navy text-white py-2 rounded-lg hover:bg-blue-800 transition-colors" 
+                                data-project="project2">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3: Industrial Precast Facility -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="industrial">
+                    <div class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 relative">
+                        <img src="https://kimi-web-img.moonshot.cn/img/tindallcorp.com/1fb65c8a6e4ba29bd71a31e789a2bf15670b5c48.jpg" 
+                             alt="Industrial Precast Facility" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-copper text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Industrial
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-navy mb-2">Industrial Precast Facility</h3>
+                        <p class="text-warm-gray mb-4">Design and production of precast concrete elements for industrial construction projects in Kuwait.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Precast Design</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Production</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Quality Assurance</span>
+                        </div>
+                        <button class="view-project-btn w-full bg-navy text-white py-2 rounded-lg hover:bg-blue-800 transition-colors" 
+                                data-project="project3">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4: Waterproofing Project -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="finishing">
+                    <div class="h-48 bg-gradient-to-br from-purple-400 to-purple-600 relative">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.stocorp.com/18405b69604b6ba1b7db43fe09a0886419eecf9e.jpg" 
+                             alt="Waterproofing Systems" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-copper text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Finishing
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-navy mb-2">Waterproofing Systems</h3>
+                        <p class="text-warm-gray mb-4">Advanced waterproofing solutions for multiple residential and commercial buildings using modern techniques.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Waterproofing</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">System Design</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Installation</span>
+                        </div>
+                        <button class="view-project-btn w-full bg-navy text-white py-2 rounded-lg hover:bg-blue-800 transition-colors" 
+                                data-project="project4">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 5: Quality Control Inspection -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="commercial industrial">
+                    <div class="h-48 bg-gradient-to-br from-red-400 to-red-600 relative">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.constructionplacements.com/90c6d349817c76a44f15e8c6feed35eb29340c34.webp" 
+                             alt="Quality Control Systems" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-copper text-white px-3 py-1 rounded-full text-sm font-medium">
+                            Quality Control
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-navy mb-2">Quality Control Systems</h3>
+                        <p class="text-warm-gray mb-4">Implementation of comprehensive QA/QC procedures for construction projects ensuring compliance with international standards.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">QA/QC</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Compliance</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Standards</span>
+                        </div>
+                        <button class="view-project-btn w-full bg-navy text-white py-2 rounded-lg hover:bg-blue-800 transition-colors" 
+                                data-project="project5">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 6: MEP Coordination -->
+                <div class="project-card bg-white rounded-xl shadow-lg overflow-hidden card-hover" data-category="commercial finishing">
+                    <div class="h-48 bg-gradient-to-br from-indigo-400 to-indigo-600 relative">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.rib-software.com/e4835833dfc84fc2e18400b8cddcfcc9de247324.webp" 
+                             alt="MEP Coordination" class="w-full h-full object-cover">
+                        <div class="absolute top-4 right-4 bg-copper text-white px-3 py-1 rounded-full text-sm font-medium">
+                            MEP
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-navy mb-2">MEP Coordination</h3>
+                        <p class="text-warm-gray mb-4">Coordination of mechanical, electrical, and plumbing systems with architectural and structural elements.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">MEP Systems</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">Coordination</span>
+                            <span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">BIM</span>
+                        </div>
+                        <button class="view-project-btn w-full bg-navy text-white py-2 rounded-lg hover:bg-blue-800 transition-colors" 
+                                data-project="project6">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <h2 id="modal-title" class="font-display text-3xl font-bold text-navy"></h2>
+                    <button id="close-modal" class="text-warm-gray hover:text-charcoal text-2xl">&times;</button>
+                </div>
+                <div id="modal-body">
+                    <!-- Modal content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <section class="py-20 bg-navy text-white">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="font-display text-4xl font-bold mb-6">Interested in Working Together?</h2>
+            <p class="text-xl mb-8 opacity-90">Let's discuss your next construction project and how my expertise can contribute to its success.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="bg-copper text-white px-8 py-3 rounded-lg hover:bg-orange-600 transition-colors font-medium">
+                    Start a Project
+                </a>
+                <a href="index.html" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-navy transition-colors font-medium">
+                    View Resume
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-6">
+                <h3 class="font-display text-2xl font-bold mb-2">Abbas Hatim Ali</h3>
+                <p class="text-warm-gray">Civil Engineer - Finishing Works Specialist</p>
+            </div>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="mailto:abbashatimalio3@gmail.com" class="text-warm-gray hover:text-copper transition-colors">
+                    📧 Email
+                </a>
+                <a href="tel:+96595565754" class="text-warm-gray hover:text-copper transition-colors">
+                    📞 Kuwait
+                </a>
+                <a href="tel:+918559909290" class="text-warm-gray hover:text-copper transition-colors">
+                    📞 India
+                </a>
+            </div>
+            <div class="text-warm-gray text-sm">
+                © 2024 Abbas Hatim Ali. All rights reserved. | Location: Fahaheel, Kuwait
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Portfolio functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            initPortfolioFilters();
+            initProjectModals();
+	    initDownloadButton();
+        });
+
+
+
+
+function initDownloadButton() {
+console.log("Main Aya ");
+    const downloadBtn = document.getElementById('download-resume');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+            // Path to resume file inside the resources folder
+            const resumePath = 'resources\\AbbasResume.pdf';
+            
+            // Create an invisible link element
+            const link = document.createElement('a');
+            link.href = resumePath;
+            link.download = 'resume.pdf';
+            
+            // Append to DOM, trigger click, then remove
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
+}
+
+
+
+
+        function initPortfolioFilters() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const filter = this.getAttribute('data-filter');
+                    
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        const categories = card.getAttribute('data-category');
+                        
+                        if (filter === 'all' || categories.includes(filter)) {
+                            card.classList.remove('hidden');
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    });
+                });
+            });
+        }
+
+        function initProjectModals() {
+            const modal = document.getElementById('project-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalBody = document.getElementById('modal-body');
+            const closeBtn = document.getElementById('close-modal');
+            const viewBtns = document.querySelectorAll('.view-project-btn');
+
+            const projectData = {
+                project1: {
+                    title: 'Luxury Residential Complex',
+                    description: 'A comprehensive finishing works project for a luxury residential complex consisting of 50+ high-end units in Kuwait. The project involved complete interior finishing including premium tiling, painting, joinery, and waterproofing works.',
+                    details: [
+                        'Managed finishing works for 50+ residential units',
+                        'Premium tiling and marble installation',
+                        'High-quality painting and coating systems',
+                        'Custom joinery and woodwork',
+                        'Advanced waterproofing solutions',
+                        'Quality control and inspection protocols'
+                    ],
+                    technologies: ['AutoCAD', 'Revit', 'Quality Control Systems', 'Project Management'],
+                    duration: '18 months',
+                    location: 'Kuwait City, Kuwait',
+                    role: 'Production Engineer - Finishing Works'
+                },
+                project2: {
+                    title: 'Commercial Office Building',
+                    description: 'Complete finishing works for a 15-story commercial building including facade installation, interior fit-outs, and MEP coordination. The project required careful coordination of multiple trades and systems.',
+                    details: [
+                        '15-story commercial building finishing',
+                        'Curtain wall and facade installation',
+                        'Interior fit-out and space planning',
+                        'MEP system coordination',
+                        'Fire safety system integration',
+                        'Compliance with commercial building codes'
+                    ],
+                    technologies: ['STAAD.Pro', 'ETABS', 'MEP Coordination', 'BIM Modeling'],
+                    duration: '24 months',
+                    location: 'Shuwaikh, Kuwait',
+                    role: 'CAD Designer & Finishing Coordinator'
+                },
+                project3: {
+                    title: 'Industrial Precast Facility',
+                    description: 'Design and production management for precast concrete elements used in industrial construction projects. The facility produced structural elements for various industrial applications.',
+                    details: [
+                        'Precast concrete element design',
+                        'Production line optimization',
+                        'Quality control procedures',
+                        'Structural analysis and verification',
+                        'Installation coordination',
+                        'Industrial safety compliance'
+                    ],
+                    technologies: ['Precast Design', 'AutoCAD', 'Structural Analysis', 'Quality Assurance'],
+                    duration: '12 months',
+                    location: 'Mina Abdullah, Kuwait',
+                    role: 'Production Engineer - Precast Works'
+                },
+                project4: {
+                    title: 'Waterproofing Systems',
+                    description: 'Implementation of advanced waterproofing solutions for multiple residential and commercial buildings. The project involved various waterproofing techniques and materials.',
+                    details: [
+                        'Comprehensive waterproofing design',
+                        'Multiple building applications',
+                        'Advanced membrane systems',
+                        'Quality testing and verification',
+                        'Long-term performance monitoring',
+                        'Maintenance planning'
+                    ],
+                    technologies: ['Waterproofing Systems', 'Material Testing', 'Quality Control', 'AutoCAD'],
+                    duration: '8 months',
+                    location: 'Multiple locations, Kuwait',
+                    role: 'Quality Control Engineer'
+                },
+                project5: {
+                    title: 'Quality Control Systems',
+                    description: 'Development and implementation of comprehensive QA/QC procedures for construction projects, ensuring compliance with international standards and local regulations.',
+                    details: [
+                        'QA/QC procedure development',
+                        'International standards compliance',
+                        'Inspection and testing protocols',
+                        'Documentation and reporting systems',
+                        'Training and implementation',
+                        'Continuous improvement processes'
+                    ],
+                    technologies: ['Quality Management', 'ISO Standards', 'Inspection Systems', 'Documentation'],
+                    duration: '6 months',
+                    location: 'Kuwait',
+                    role: 'Quality Assurance Engineer'
+                },
+                project6: {
+                    title: 'MEP Coordination',
+                    description: 'Coordination of mechanical, electrical, and plumbing systems with architectural and structural elements using BIM modeling and advanced coordination techniques.',
+                    details: [
+                        'BIM modeling for MEP systems',
+                        'Clash detection and resolution',
+                        'Coordination with architecture',
+                        'Structural system integration',
+                        'Installation planning',
+                        'Performance optimization'
+                    ],
+                    technologies: ['Revit', 'BIM Modeling', 'MEP Design', 'Coordination Software'],
+                    duration: '10 months',
+                    location: 'Shuwaikh, Kuwait',
+                    role: 'CAD Designer & MEP Coordinator'
+                }
+            };
+
+            viewBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const projectId = this.getAttribute('data-project');
+                    const project = projectData[projectId];
+                    
+                    if (project) {
+                        modalTitle.textContent = project.title;
+                        modalBody.innerHTML = `
+                            <div class="mb-6">
+                                <p class="text-lg text-charcoal mb-4">${project.description}</p>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                                <div>
+                                    <h4 class="font-bold text-navy mb-3">Project Details</h4>
+                                    <ul class="space-y-2">
+                                        ${project.details.map(detail => `<li class="flex items-start"><span class="text-copper mr-2">•</span>${detail}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-bold text-navy mb-3">Project Information</h4>
+                                    <div class="space-y-3">
+                                        <div><strong>Duration:</strong> ${project.duration}</div>
+                                        <div><strong>Location:</strong> ${project.location}</div>
+                                        <div><strong>Role:</strong> ${project.role}</div>
+                                        <div>
+                                            <strong>Technologies:</strong>
+                                            <div class="flex flex-wrap gap-2 mt-2">
+                                                ${project.technologies.map(tech => `<span class="bg-gray-100 text-charcoal px-3 py-1 rounded-full text-sm">${tech}</span>`).join('')}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="flex gap-4">
+                                <a href="contact.html" class="bg-copper text-white px-6 py-3 rounded-lg hover:bg-orange-600 transition-colors">
+                                    Discuss Similar Project
+                                </a>
+                                <button id="close-modal-btn" class="border-2 border-navy text-navy px-6 py-3 rounded-lg hover:bg-navy hover:text-white transition-colors">
+                                    Close
+                                </button>
+                            </div>
+                        `;
+                        
+                        modal.classList.add('show');
+                        
+                        // Add close event to the new close button
+                        document.getElementById('close-modal-btn').addEventListener('click', closeModal);
+                    }
+                });
+            });
+
+            function closeModal() {
+                modal.classList.remove('show');
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+        }
+    </script>
+</body>
+</html>
