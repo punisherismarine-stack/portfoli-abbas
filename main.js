@@ -199,12 +199,12 @@ console.log("Main Aya ");
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
             // Path to resume file inside the resources folder
-            const resumePath = 'AbbasResume.pdf';
+            const resumePath = 'Resume.html';
             
             // Create an invisible link element
             const link = document.createElement('a');
             link.href = resumePath;
-            link.download = 'resume.pdf';
+            link.download = 'Resume.html';
             
             // Append to DOM, trigger click, then remove
             document.body.appendChild(link);
