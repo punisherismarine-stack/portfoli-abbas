@@ -194,22 +194,15 @@ function initNavigation() {
 
 // Download resume functionality
 function initDownloadButton() {
-console.log("Main Aya ");
+    console.log("Main Aya");
     const downloadBtn = document.getElementById('download-resume');
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
-            // Path to resume file inside the resources folder
+            // Path to resume file
             const resumePath = 'Resume.html';
             
-            // Create an invisible link element
-            const link = document.createElement('a');
-            link.href = resumePath;
-            link.download = 'Resume.html';
-            
-            // Append to DOM, trigger click, then remove
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            // Open Resume.html in a new browser tab
+            window.open(resumePath, '_blank');
         });
     }
 }
