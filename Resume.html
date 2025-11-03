@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABBAS HATIM ALI - Resume</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              border: "hsl(214.3, 31.8%, 91.4%)",
+              background: "hsl(0, 0%, 100%)",
+              foreground: "hsl(222.2, 84%, 4.9%)",
+              primary: "hsl(222.2, 47.4%, 11.2%)",
+              "primary-foreground": "hsl(210, 40%, 98%)",
+              muted: "hsl(210, 40%, 96.1%)",
+              "muted-foreground": "hsl(215.4, 16.3%, 46.9%)",
+              card: "hsl(0, 0%, 100%)",
+              "card-foreground": "hsl(222.2, 84%, 4.9%)",
+              secondary: "hsl(210, 40%, 96.1%)",
+              "secondary-foreground": "hsl(222.2, 47.4%, 11.2%)",
+            },
+          },
+        },
+      };
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest/dist/lucide.min.js"></script>
+
+    <style>
+      @media print {
+        @page {
+          size: A4;
+          margin: 10mm;
+        }
+        body {
+          background-color: #fff !important;
+        }
+        .print\:hidden {
+          display: none !important;
+        }
+        .a4\:shadow {
+          box-shadow: none !important;
+        }
+        .a4\:rounded-2xl {
+          border-radius: 0 !important;
+        }
+        .a4\:border {
+          border: none !important;
+        }
+        .a4\:bg-card {
+          background: transparent !important;
+        }
+        .a4\:p-6 {
+          padding: 0 !important;
+        }
+        .a4\:m-0 {
+          margin: 0 !important;
+        }
+        .border-muted {
+          border-color: transparent !important;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="min-h-screen bg-background text-foreground">
+    <div class="mx-auto max-w-4xl px-5 py-6">
+      
+      <div class="print:hidden mb-4 flex items-center justify-between">
+        <div class="text-sm text-muted-foreground">
+          One‑page resume • Print to PDF
+        </div>
+        <div class="flex gap-2">
+          <button
+            onclick="window.print()"
+            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3"
+          >
+            Print / Save PDF
+          </button>
+        </div>
+      </div>
+
+      <section
+        class="a4:shadow a4:rounded-2xl a4:border a4:border-border a4:bg-card a4:p-6 a4:m-0 a4:w-auto a4:max-w-none"
+      >
+        <header class="grid gap-4">
+          <div class="flex flex-col gap-2">
+            <h1 class="text-2xl font-extrabold tracking-tight sm:text-3xl">
+              ABBAS HATIM ALI
+            </h1>
+            <p class="text-sm text-muted-foreground">
+              Civil Engineer | 10+ Years Experience
+            </p>
+          </div>
+          <div class="h-px w-full bg-border"></div>
+        </header>
+
+        <main class="mt-4 grid grid-cols-1 gap-6 lg:grid-cols-3">
+          <div class="lg:col-span-1 space-y-4">
+            
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-none border-muted">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <div class="flex items-center gap-2">
+                  <div class="h-5 w-1.5 rounded bg-primary"></div>
+                  <h3 class="text-lg font-semibold tracking-tight">Contact</h3>
+                </div>
+              </div>
+              <div class="p-6 pt-0 grid gap-2">
+                <a
+                  href="tel:+918559909290"
+                  class="hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div class="flex items-center gap-2 text-sm">
+                    <i data-lucide="phone" class="h-4 w-4 shrink-0"></i>
+                    <span class="text-muted-foreground">India:</span>
+                    <span class="font-medium">+91-8559-909-290</span>
+                  </div>
+                </a>
+                <a
+                  href="tel:+96595565754"
+                  class="hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div class="flex items-center gap-2 text-sm">
+                    <i data-lucide="phone" class="h-4 w-4 shrink-0"></i>
+                    <span class="text-muted-foreground">Kuwait:</span>
+                    <span class="font-medium">+965-9556-5754</span>
+                  </div>
+                </a>
+                <a
+                  href="mailto:abbashatimali03@gmail.com"
+                  class="hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <div class="flex items-center gap-2 text-sm">
+                    <i data-lucide="mail" class="h-4 w-4 shrink-0"></i>
+                    <span class="text-muted-foreground">Mail:</span>
+                    <span class="font-medium">abbashatimali03@gmail.com</span>
+                  </div>
+                </a>
+                <div class="flex items-center gap-2 text-sm">
+                  <i data-lucide="map-pin" class="h-4 w-4 shrink-0"></i>
+                  <span class="text-muted-foreground">Location:</span>
+                  <span class="font-medium">Fahaheel, Kuwait</span>
+                </div>
+                <div class="flex items-center gap-2 text-sm">
+                  <i data-lucide="flag" class="h-4 w-4 shrink-0"></i>
+                  <span class="text-muted-foreground">Nationality:</span>
+                  <span class="font-medium">Indian</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-none border-muted">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <div class="flex items-center gap-2">
+                  <div class="h-5 w-1.5 rounded bg-primary"></div>
+                  <h3 class="text-lg font-semibold tracking-tight">
+                    Technical Skills
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6 pt-0 grid gap-3 text-sm">
+                <div>
+                  <p class="font-semibold">Design & Analysis</p>
+                  <p class="text-muted-foreground">
+                    AutoCAD, STAAD.Pro, Revit, ETABS, IDAT, MS Excel, MS Word,
+                    PowerPoint
+                  </p>
+                </div>
+                <div>
+                  <p class="font-semibold">Documentation & Reporting</p>
+                  <p class="text-muted-foreground">
+                    Snag Logs, Inspection Requests, Method Statements, Work
+                    Permits
+                  </p>
+                </div>
+                <div>
+                  <p class="font-semibold">Soft Skills</p>
+                  <p class="text-muted-foreground">
+                    Leadership, Communication, Analytical Thinking, Problem
+                    Solving, Time Management, Team Collaboration
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-none border-muted">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <div class="flex items-center gap-2">
+                  <div class="h-5 w-1.5 rounded bg-primary"></div>
+                  <h3 class="text-lg font-semibold tracking-tight">
+                    Education
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6 pt-0 grid gap-2 text-sm">
+                <div class="grid gap-0.5">
+                  <p class="font-semibold">
+                    B.Tech (Honours) in Civil Engineering
+                  </p>
+                  <p class="text-muted-foreground">
+                    Rajasthan Technical University, Jaipur, India
+                  </p>
+                  <p class="text-muted-foreground">2015 • Aggregate: 78.81%</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-none border-muted">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <div class="flex items-center gap-2">
+                  <div class="h-5 w-1.5 rounded bg-primary"></div>
+                  <h3 class="text-lg font-semibold tracking-tight">
+                    Languages
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6 pt-0 flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground border-border py-1 px-2"
+                >
+                  English — Professional
+                </span>
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground border-border py-1 px-2"
+                >
+                  Hindi — Native
+                </span>
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground border-border py-1 px-2"
+                >
+                  Arabic — Professional
+                </span>
+              </div>
+            </div>
+
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-none border-muted">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <div class="flex items-center gap-2">
+                  <div class="h-5 w-1.5 rounded bg-primary"></div>
+                  <h3 class="text-lg font-semibold tracking-tight">
+                    Certifications & Achievements
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6 pt-0 flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                >
+                  GATE Qualified (Graduate Aptitude Test in Engineering)
+                </span>
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                >
+                  Best Project Award: Traffic Density Management
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-2 space-y-4">
+            
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-none border-muted">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <div class="flex items-center gap-2">
+                  <div class="h-5 w-1.5 rounded bg-primary"></div>
+                  <h3 class="text-lg font-semibold tracking-tight">
+                    Professional Summary
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6 pt-0">
+                <p class="text-sm leading-relaxed text-muted-foreground">
+                  Civil Engineer with 10+ years across residential, commercial,
+                  and industrial projects. Strong record delivering finishing
+                  scope—masonry, tiling, plaster, paint, waterproofing,
+                  joinery—per drawings, BOQ, and method statements. Experienced
+                  in site supervision, QA/QC, IRs, ITPs, material testing,
+                  quantity verification, and snag closure. Effective
+                  coordination with architects, consultants, subcontractors, and
+                  QA/QC to achieve schedule, quality, and safety targets.
+                </p>
+              </div>
+            </div>
+
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-none border-muted">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <div class="flex items-center gap-2">
+                  <div class="h-5 w-1.5 rounded bg-primary"></div>
+                  <h3 class="text-lg font-semibold tracking-tight">
+                    Core Competencies
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6 pt-0 flex flex-wrap gap-2">
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >Site Supervision and Coordination</span
+                >
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >QA/QC, IR/ITP Compliance</span
+                >
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >Material Inspection (IS, ASTM, QCS)</span
+                >
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >Drawing Review and BOQ Interpretation</span
+                >
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >Quantity Estimation and Cost Control</span
+                >
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >Snag List Preparation and Closure</span
+                >
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >Precast Production and Installation</span
+                >
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >Project Planning and Progress Reporting</span
+                >
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >Subcontractor Management and Resource Allocation</span
+                >
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >HSE Compliance</span
+                >
+                <span
+                  class="inline-flex items-center rounded-md border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 whitespace-normal text-left font-normal py-1 px-2"
+                  >Client and Consultant Coordination</span
+                >
+              </div>
+            </div>
+
+            <div class="rounded-lg border bg-card text-card-foreground shadow-sm shadow-none border-muted">
+              <div class="flex flex-col space-y-1.5 p-6 pb-2">
+                <div class="flex items-center gap-2">
+                  <div class="h-5 w-1.5 rounded bg-primary"></div>
+                  <h3 class="text-lg font-semibold tracking-tight">
+                    Professional Experience
+                  </h3>
+                </div>
+              </div>
+              <div class="p-6 pt-0 grid gap-5">
+                <div class="grid gap-1">
+                  <div
+                    class="flex flex-wrap items-baseline justify-between gap-2"
+                  >
+                    <p class="font-semibold">
+                      Production Engineer – Precast Works
+                    </p>
+                    <p class="text-xs text-muted-foreground">
+                      Oct 2023 – Present
+                    </p>
+                  </div>
+                  <p class="text-sm text-muted-foreground">
+                    Real-Estate Construction & Fabrication Co. (RECAFCO) • Mina
+                    Abdullah, Kuwait
+                  </p>
+                  <ul
+                    class="mt-1 list-disc pl-5 text-sm leading-relaxed text-muted-foreground"
+                  >
+                    <li>
+                      Supervise and execute finishing works per approved
+                      drawings and specifications: masonry, tiling, plastering,
+                      painting, waterproofing, and joinery.
+                    </li>
+                    <li>
+                      Conduct daily inspections and raise IRs as per ITPs;
+                      ensure compliance with QCS, IS codes, and project QA/QC
+                      procedures.
+                    </li>
+                    <li>
+                      Coordinate sequencing and material availability with
+                      subcontractors, suppliers, and site engineers.
+                    </li>
+                    <li>
+                      Prepare BOQ take-offs, verify quantities, and optimize
+                      resource utilization.
+                    </li>
+                    <li>
+                      Track schedule, quality, and safety; produce daily
+                      progress and monthly status reports.
+                    </li>
+                    <li>
+                      Assist with snag list compilation, defect rectification,
+                      and handover documentation.
+                    </li>
+                  </ul>
+                </div>
+                <div class="grid gap-1">
+                  <div
+                    class="flex flex-wrap items-baseline justify-between gap-2"
+                  >
+                    <p class="font-semibold">
+                      CAD Designer – Architectural & Structural Detailing
+                    </p>
+                    <p class="text-xs text-muted-foreground">
+                      Dec 2018 – Sep 2023
+                    </p>
+                  </div>
+                  <p class="text-sm text-muted-foreground">
+                    Mohammed Taqi • Shuwaikh, Kuwait
+                  </p>
+                  <ul
+                    class="mt-1 list-disc pl-5 text-sm leading-relaxed text-muted-foreground"
+                  >
+                    <li>
+                      Prepared architectural, interior, and finishing drawings
+                      using AutoCAD and Revit for residential and commercial
+                      projects.
+                    </li>
+                    <li>
+                      Resolved interface issues through coordination of
+                      finishing and MEP layouts with clients and contractors.
+                    </li>
+                    <li>
+                      Produced quantity take-offs and supported tender
+                      documentation for finishing scope.
+                    </li>
+                    <li>
+                      Improved drawing quality and reduced rework through
+                      detailed coordination.
+                    </li>
+                  </ul>
+                </div>
+                <div class="grid gap-1">
+                  <div
+                    class="flex flex-wrap items-baseline justify-between gap-2"
+                  >
+                    <p class="font-semibold">Structural Design Engineer</p>
+                    <p class="text-xs text-muted-foreground">
+                      Aug 2015 – Oct 2017
+                    </p>
+                  </div>
+                  <p class="text-sm text-muted-foreground">
+                    Beniwal Construction Co. Pvt. Ltd. • Jodhpur, India
+                  </p>
+                  <ul
+                    class="mt-1 list-disc pl-5 text-sm leading-relaxed text-muted-foreground"
+                  >
+                    <li>
+                      Designed RC elements—columns, beams, slabs,
+                      foundations—per IS codes and client requirements.
+                    </li>
+                    <li>
+                      Supported site teams by reviewing drawings and clarifying
+                      technical details for execution.
+                    </li>
+                    <li>
+                      Inspected finishing quality to meet specified tolerances.
+                    </li>
+                  </ul>
+                </div>
+                <div class="grid gap-1">
+                  <div
+                    class="flex flex-wrap items-baseline justify-between gap-2"
+                  >
+                    <p class="font-semibold">Structural Engineer (Intern)</p>
+                    <p class="text-xs text-muted-foreground">
+                      Jun 2014 – Jul 2015
+                    </p>
+                  </div>
+                  <p class="text-sm text-muted-foreground">
+                    TSLABS • Pune, India
+                  </p>
+                  <ul
+                    class="mt-1 list-disc pl-5 text-sm leading-relaxed text-muted-foreground"
+                  >
+                    <li>
+                      Assisted in design and detailing of reinforced concrete
+                      elements for multi‑storey projects.
+                    </li>
+                    <li>
+                      Prepared Excel-based member design packages and
+                      corresponding structural drawings.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </section>
+    </div>
+
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
