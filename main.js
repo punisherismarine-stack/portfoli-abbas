@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function initTypewriter() {
     const typed = new Typed('#typed-summary', {
         strings: [
-            'Civil Engineer – Finishing Works',
-            '9+ Years Experience',
+            'Civil Engineer',
+            '10+ Years Experience',
             'Quality Control Specialist',
             'Precast Concrete Expert',
             'Project Management Professional'
