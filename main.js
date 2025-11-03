@@ -30,9 +30,9 @@ function initTypewriter() {
         strings: [
             'Civil Engineer',
             '10+ Years Experience',
-            'Quality Control Specialist',
             'Precast Concrete Expert',
-            'Project Management Professional'
+            'Project Management Professional',
+            'Quality Control Specialist'
         ],
         typeSpeed: 50,
         backSpeed: 30,
